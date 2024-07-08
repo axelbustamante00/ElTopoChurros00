@@ -35,14 +35,8 @@ export class ProductListComponent {
 
   ];
 
-  upQuantity(product: Product): void{
-    if(product.quantity < product.stock)
-    product.quantity++;
-  }
-
-  downQuantity(product: Product): void{
-    if(product.quantity>0)
-    product.quantity--;
+  maxReached(m: string) {
+    alert(m);
   }
 
 }

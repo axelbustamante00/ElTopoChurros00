@@ -1,4 +1,4 @@
-<h2>Lista de productos</h2>
+<h2>Nuestros productos</h2>
 <table class="table table-bordered border-primary text-center align-middle">
     <thead>
         <tr>
@@ -28,11 +28,9 @@
                     }
                 </td>
                 <td>
-                    <div class="input-group mb-3">
-                        <button class="btn btn-outline-primary" (click)="downQuantity(product)">-</button>
-                        <input type="text" [(ngModel)]="product.quantity" class="input-group-text">
-                        <button class="btn btn-outline-primary" (click)="upQuantity(product)">+</button>                        
-                    </div>
+                    @if (product.stock>0){
+                        <app-input-integer [(quantity)]="product.quantity" [max]="product.stock" (maxReached)="maxReached($event)"></app-input-integer>
+                    }
                 </td>
             </tr>
         }
