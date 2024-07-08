@@ -10,16 +10,22 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let product of products">
-            <td class="text-center"><img [src]="product.image" [alt]="product.name" width="140" height="110"></td>
-            <td class="text-center align-middle">{{product.name}}</td>
-            <td class="text-center align-middle">{{product.type}}</td>
-            <td class="text-center align-middle">{{product.price | currency}}</td>        
-            <td class="text-center align-middle">{{product.stock}}</td>
-            <td class="text-center align-middle">
-                <span class="badge text-bg-warning" *ngIf="product.stock==0">SIN STOCK</span>
-                <span class="badge text-bg-success" *ngIf="product.stock>0">HAY STOCK</span>
-            </td>
-        </tr>
+        @for (product of products; track product.name) {
+            <tr>
+                <td class="text-center"><img [src]="product.image" [alt]="product.name" width="140" height="110"></td>
+                <td class="text-center align-middle">{{product.name}}</td>
+                <td class="text-center align-middle">{{product.type}}</td>
+                <td class="text-center align-middle">{{product.price | currency}}</td>        
+                <td class="text-center align-middle">{{product.stock}}</td>
+                <td class="text-center align-middle">
+                    @if (product.stock==0) {
+                        <span class="badge text-bg-warning">SIN STOCK</span>
+                    }
+                    @else {                        
+                        <span class="badge text-bg-success">HAY STOCK</span>
+                    }
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
