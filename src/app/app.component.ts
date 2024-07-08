@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'El Topo Churros';
+  img = {
+    "logo":"assets/img/logo.png"
+  }
 }
