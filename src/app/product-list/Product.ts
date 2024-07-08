@@ -3,5 +3,6 @@ export interface Product{
     type: string,
     price:number,
     stock:number,
-    image:string
+    image:string,
+    quantity: number
 }

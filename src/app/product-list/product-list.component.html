@@ -1,4 +1,5 @@
-<table class="table table-bordered border-primary">
+<h2>Lista de productos</h2>
+<table class="table table-bordered border-primary text-center align-middle">
     <thead>
         <tr>
             <th>Imágen</th>
@@ -7,23 +8,31 @@
             <th>Precio</th>
             <th>Stock</th>
             <th>Disponible</th>
+            <th>Compra</th>
         </tr>
     </thead>
     <tbody>
         @for (product of products; track product.name) {
             <tr>
-                <td class="text-center"><img [src]="product.image" [alt]="product.name" width="140" height="110"></td>
-                <td class="text-center align-middle">{{product.name}}</td>
-                <td class="text-center align-middle">{{product.type}}</td>
-                <td class="text-center align-middle">{{product.price | currency}}</td>        
-                <td class="text-center align-middle">{{product.stock}}</td>
-                <td class="text-center align-middle">
+                <td><img [src]="product.image" [alt]="product.name" width="140" height="110" class="img-thumbnail"></td>
+                <td>{{product.name}}</td>
+                <td>{{product.type}}</td>
+                <td>{{product.price | currency}}</td>        
+                <td>{{product.stock}}</td>
+                <td>
                     @if (product.stock==0) {
                         <span class="badge text-bg-warning">SIN STOCK</span>
                     }
                     @else {                        
                         <span class="badge text-bg-success">HAY STOCK</span>
                     }
+                </td>
+                <td>
+                    <div class="input-group mb-3">
+                        <button class="btn btn-outline-primary" (click)="downQuantity(product)">-</button>
+                        <input type="text" [(ngModel)]="product.quantity" class="input-group-text">
+                        <button class="btn btn-outline-primary" (click)="upQuantity(product)">+</button>                        
+                    </div>
                 </td>
             </tr>
         }
