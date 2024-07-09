@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Product } from './Product';
+import { ProductCartService } from '../product-cart.service';
 
 @Component({
   selector: 'app-product-list',
@@ -34,9 +35,18 @@ export class ProductListComponent {
     }
 
   ];
-
+  
   maxReached(m: string) {
     alert(m);
+  }
+
+  constructor(private cart: ProductCartService) {
+  }
+
+  addToCart (product: Product) : void {
+   this.cart.addToCart(product);
+    product.stock -= product.quantity;
+    product.quantity = 0;
   }
 
 }
