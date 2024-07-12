@@ -16,9 +16,11 @@ export class ProductCartService {
     //Clonamos objeto product en newCopy
     let newCopy = Object.assign({}, product);
     
-    //Se iteran los productos buscando uno que ya se encuentre en el carrito.
-    //Si ya está en él, entonces incrementamos la cantidad.
     let alreadyInCart = false;
+
+    //Se iteran los productos de la lista del carrito buscando si el objeto recibido ya se encuentra en el carrito.
+    //Si ya está en él, entonces incrementamos la cantidad del producto para no tener dos productos del mismo nombre
+    //en la lista separados.
     this._cartList.forEach((product: Product) =>{
       if(product.name == newCopy.name){
         alreadyInCart=true;
@@ -30,12 +32,9 @@ export class ProductCartService {
       this._cartList.push(newCopy);
 
     this._cartListSubject.next(this._cartList);
-    
-    /*if(!this._cartList.find((v1) => v1.name == product.name)){
-      this._cartList.push({...product});
-    }
-    else{
-      item.quantity += product.quantity;
-    }*/
+  }
+
+  get_cartList(){
+    return this._cartList;
   }
 }
