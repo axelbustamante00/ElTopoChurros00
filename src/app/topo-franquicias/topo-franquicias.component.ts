@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './topo-franquicias.component.scss'
 })
 export class TopoFranquiciasComponent {
-
+  img = {
+    "familia":"assets/img/familia.jpg"
+  }
 }
