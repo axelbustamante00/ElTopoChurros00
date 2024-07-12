@@ -1,27 +1,22 @@
 # Eltopochurros00
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.7.
+Este proyecto es una aplicación web desarrollada para adquirir conocimientos en Angular y TypeScript. La aplicación simula una tienda online de la marca El Topo Churros brindando la capacidad al cliente sumar productos al carrito de compras.
 
-## Development server
+## Características
+* Se listan los productos disponibles
+* Se hace seguimiento de stock y en caso de que su valor sea 0 se añade un cartel indicandolo.
+* Se brinda la posibilidad de sumar productos al carrito y este se sincroniza con los datos de la lista inicial.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Tecnologías utilizadas
+* Angular: Framework de desarrollo de aplicaciones web.
+* TypeScript: Lenguaje de programación.
+* HTML y CSS: Para la estructura y el estilo de la interfaz de usuario.
 
-## Code scaffolding
+## Cómo usar
+1. Clona este repositorio en tu máquina local.
+2. Instala las dependencias con npm install.
+3. Ejecuta la aplicación con ng serve.
+4. Abre tu navegador y visita http://localhost:4200 para ver la aplicación en acción.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Datos del estudiante
+DNI: 44857577 - Email: vascoguitar@hotmail.com - Sede: Tandil
